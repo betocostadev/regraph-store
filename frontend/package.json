@@ -1,7 +1,7 @@
 {
-  "name": "sick-fits-frontend",
+  "name": "regraph-frontend",
   "version": "2.0.0",
-  "description": "Sick Fits! An example React, GraphQL, Next and Apollo",
+  "description": "Regraph! An example React, GraphQL, Next and Apollo",
   "main": "index.js",
   "scripts": {
     "dev": "next -p 7777",
@@ -29,7 +29,7 @@
     "next": "^10.0.3",
     "next-with-apollo": "^5.1.1",
     "nprogress": "^0.2.0",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.8.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-transition-group": "^4.4.1",

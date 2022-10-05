@@ -1,3 +1,7 @@
 export default function IndexPage() {
-  return <div>Hello - Next.js index.js</div>
+  return (
+    <>
+      <h2>Hello - Next.js index.js</h2>
+    </>
+  )
 }
