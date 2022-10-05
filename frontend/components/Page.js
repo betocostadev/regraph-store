@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes, { any } from 'prop-types'
 import Header from './Header'
 
 export default function Page({ children }) {
@@ -6,8 +6,5 @@ export default function Page({ children }) {
 }
 
 Page.propTypes = {
-  children: PropTypes.oneOf([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
+  children: any,
 }
