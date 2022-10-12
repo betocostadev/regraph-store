@@ -1,12 +1,14 @@
+import 'dotenv/config';
 import { createAuth } from '@keystone-next/auth';
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import {
   withItemData,
   statelessSessions,
 } from '@keystone-next/keystone/session';
-import 'dotenv/config';
 
 import { User } from './schemas/User';
+import { Product } from './schemas/Product';
+import { ProductImage } from './schemas/ProductImage';
 
 const databaseUrl =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-regraph';
@@ -42,6 +44,8 @@ export default withAuth(
     lists: createSchema({
       // Schema items
       User,
+      Product,
+      ProductImage,
     }),
     ui: {
       // Show the UI only for people who pass the test
