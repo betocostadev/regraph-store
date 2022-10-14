@@ -56,11 +56,10 @@ export default withAuth(
     }),
     ui: {
       // Show the UI only for people who pass the test
-      isAccessAllowed: ({ session }) => {
-        console.log('Session data:');
-        console.log(session);
-        return !!session?.data;
-      },
+      isAccessAllowed: ({ session }) =>
+        // console.log('Session data:');
+        // console.log(session);
+        !!session?.data,
     },
     session: withItemData(statelessSessions(sessionConfig), {
       User: 'id name',
