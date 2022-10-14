@@ -8,8 +8,8 @@ export default function useForm(initial = {}) {
 
     // Handle numbers
     if (type === 'number' && value) value = parseFloat(value)
-    // Handle file upload - not working? - As string is working fine
-    // if (type === 'file') value[0] = e.target.files
+    // Handle file upload
+    if (type === 'file') [value] = e.target.files
 
     setInputs({
       ...inputs,
