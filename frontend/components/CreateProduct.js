@@ -1,5 +1,10 @@
+import { useMutation } from '@apollo/client'
+import Router from 'next/router'
 import useForm from '../lib/hooks/useForm'
 import Form from './styles/Form'
+import DisplayError from './DisplayError'
+import { CREATE_PRODUCT_MUTATION } from '../lib/services/product'
+import { ALL_PRODUCTS_QUERY } from '../lib/services/products'
 
 export default function CreateProduct() {
   const { inputs, handleChange, clearForm, resetForm } = useForm({
@@ -9,14 +14,29 @@ export default function CreateProduct() {
     description: '',
   })
 
-  const handleSubmit = (e) => {
+  const [createProduct, { loading, error, data }] = useMutation(
+    CREATE_PRODUCT_MUTATION,
+    {
+      variables: inputs,
+      // referetch all the products to update the products page
+      refetchQueries: [{ query: ALL_PRODUCTS_QUERY }],
+    }
+  )
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(inputs)
+    const res = await createProduct()
+    clearForm()
+    Router.push({
+      pathname: `/product/${res.data.createProduct.id}`,
+    })
   }
 
   return (
     <Form onSubmit={handleSubmit}>
-      <fieldset disabled={false} aria-busy={false}>
+      <DisplayError error={error} />
+
+      <fieldset disabled={loading} aria-busy={loading}>
         <label htmlFor="image">
           Product image
           <input
