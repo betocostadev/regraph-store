@@ -1,3 +1,5 @@
-export default function Product({ query }) {
-  return <div>Single Product {query.id}</div>
+import SingleProduct from '../../components/SingleProduct'
+
+export default function SingleProductPage({ query }) {
+  return <SingleProduct id={query.id} />
 }

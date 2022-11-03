@@ -24,3 +24,22 @@ export const CREATE_PRODUCT_MUTATION = gql`
     }
   }
 `
+
+// QUERIES
+export const SINGLE_PRODUCT_QUERY = gql`
+  query SINGLE_PRODUCT_QUERY($id: ID!) {
+    Product(where: { id: $id }) {
+      name
+      price
+      description
+      id
+      photo {
+        image {
+          id
+          publicUrlTransformed
+        }
+        altText
+      }
+    }
+  }
+`
