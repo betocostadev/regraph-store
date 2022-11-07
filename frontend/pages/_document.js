@@ -17,13 +17,7 @@ export default class RegraphDocument extends Document {
   render() {
     return (
       <Html lang="en-US">
-        <Head>
-          <meta
-            name="description"
-            content="Regraph Store - your online store for everything"
-          />
-          <title>Regraph</title>
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

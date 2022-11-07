@@ -25,6 +25,25 @@ export const CREATE_PRODUCT_MUTATION = gql`
   }
 `
 
+export const UPDATE_PRODUCT_MUTATION = gql`
+  mutation UPDATE_PRODUCT_MUTATION(
+    $id: ID!
+    $name: String
+    $description: String
+    $price: Int
+  ) {
+    updateProduct(
+      id: $id
+      data: { id: $id, name: $name, description: $description, price: $price }
+    ) {
+      id
+      name
+      description
+      price
+    }
+  }
+`
+
 // QUERIES
 export const SINGLE_PRODUCT_QUERY = gql`
   query SINGLE_PRODUCT_QUERY($id: ID!) {

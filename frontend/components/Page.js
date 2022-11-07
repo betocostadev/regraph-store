@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import PropTypes, { any } from 'prop-types'
 import styled, { createGlobalStyle } from 'styled-components'
 import Header from './Header'
@@ -55,6 +56,13 @@ export default function Page({ children }) {
   return (
     <div>
       <GlobalStyles />
+      <Head>
+        <meta
+          name="description"
+          content="Regraph Store - your online store for everything"
+        />
+        <title>Regraph</title>
+      </Head>
       <Header />
       <InnerStyles>{children}</InnerStyles>
     </div>
