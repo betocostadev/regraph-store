@@ -10,7 +10,7 @@ export const products = [
     name: 'Macbook Pro M1 16',
     description: 'Gorgeous',
     status: 'AVAILABLE',
-    price: 13423,
+    price: 199999,
     photo: {
       id: '63473187723b6f58ad70c153',
       filename: 'mbp16-spacegray-select-202110.jpeg',
