@@ -25,11 +25,15 @@ export default function CreateProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const res = await createProduct()
-    clearForm()
-    Router.push({
-      pathname: `/product/${res.data.createProduct.id}`,
-    })
+    try {
+      const res = await createProduct()
+      clearForm()
+      Router.push({
+        pathname: `/product/${res.data.createProduct.id}`,
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (

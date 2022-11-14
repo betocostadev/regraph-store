@@ -1,7 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function useForm(initial = {}) {
   const [inputs, setInputs] = useState(initial)
+  const initialValues = Object.values(initial).join('')
+
+  useEffect(() => {
+    // updated the form inputs if it receives server data
+    setInputs(initial)
+  }, [initialValues])
 
   function handleChange(e) {
     let { value, name, type } = e.target

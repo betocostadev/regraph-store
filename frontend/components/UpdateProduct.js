@@ -18,11 +18,13 @@ export default function UpdateProduct({ id }) {
     { data: updateData, error: updateError, loading: updateLoading },
   ] = useMutation(UPDATE_PRODUCT_MUTATION)
 
-  const { inputs, handleChange, clearForm, resetForm } = useForm({
-    name: data?.Product?.name,
-    price: data?.Product?.price,
-    description: data?.Product?.description,
-  })
+  const { inputs, handleChange, clearForm, resetForm } = useForm(
+    data?.Product || {
+      name: '',
+      description: '',
+      price: '',
+    }
+  )
 
   const handleSubmit = async (e) => {
     e.preventDefault()
