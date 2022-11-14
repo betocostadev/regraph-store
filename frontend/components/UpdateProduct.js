@@ -30,15 +30,25 @@ export default function UpdateProduct({ id }) {
     e.preventDefault()
     try {
       const res = await updateProduct({
+        // variables: {
+        //   id,
+        //   data: {
+        //     name: inputs.name,
+        //     price: inputs.price,
+        //     description: inputs.description,
+        //   },
+        // },
         variables: {
-          id,
+          id: '634849aca6f1fdaf60103721',
           data: {
-            name: inputs.name,
-            price: inputs.price,
-            description: inputs.description,
+            name: 'Yeti Hondo V4.1',
+            description: 'The super nice Dup Dup chair now updated!',
+            price: 124993,
           },
         },
       })
+      console.log('res is')
+      console.log(res)
 
       Router.push({
         pathname: `/product/${res.data.updateProduct.id}`,

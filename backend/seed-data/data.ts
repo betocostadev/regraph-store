@@ -8,7 +8,7 @@ function timestamp() {
 export const products = [
   {
     name: 'Macbook Pro M1 16',
-    description: 'Gorgeous',
+    description: 'Gorgeous new M1 Pro Silicon!',
     status: 'AVAILABLE',
     price: 199999,
     photo: {
