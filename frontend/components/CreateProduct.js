@@ -85,7 +85,7 @@ export default function CreateProduct() {
           />
         </label>
 
-        <button type="submit">+ Add Product</button>
+        <button type="submit">Add Product ➕</button>
 
         <button type="button" onClick={resetForm}>
           Reset
