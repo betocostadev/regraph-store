@@ -16,3 +16,11 @@ export const ALL_PRODUCTS_QUERY = gql`
     }
   }
 `
+
+export const ALL_PRODUCTS_META_QUERY = gql`
+  query ALL_PRODUCTS_META_QUERY {
+    _allProductsMeta {
+      count
+    }
+  }
+`

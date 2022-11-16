@@ -15,7 +15,7 @@ export default function UpdateProduct({ id }) {
 
   const [
     updateProduct,
-    { data: updateData, error: updateError, loading: updateLoading },
+    { data: updateData, loading: updateLoading, error: updateError },
   ] = useMutation(UPDATE_PRODUCT_MUTATION)
 
   const { inputs, handleChange, clearForm, resetForm } = useForm(
