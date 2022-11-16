@@ -4,7 +4,7 @@ import Pagination from '../components/Pagination'
 export default function ProductsPage() {
   return (
     <div>
-      <Pagination page={3} />
+      <Pagination page={1} />
       <Products />
       <Pagination page={1} />
     </div>
